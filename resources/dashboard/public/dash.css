@@ -1,0 +1,363 @@
+/* Colors! */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #1f1f1f; }
+
+html, table {
+  font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 14px; }
+
+#toolbar {
+  height: 28px;
+  overflow: hidden;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  font-size: 12px; }
+  #toolbar input {
+    background: #dedede;
+    border: 1px solid #1f1f1f;
+    margin: 3px;
+    padding: 3px 6px; }
+  #toolbar input:hover {
+    background: #ebebeb; }
+  #toolbar .server {
+    float: right; }
+  #toolbar .load {
+    position: relative;
+    margin: 3px;
+    float: right;
+    width: 100px;
+    padding: 4px 6px 3px 6px;
+    border: 1px solid #1f1f1f; }
+    #toolbar .load span {
+      z-index: -1; }
+    #toolbar .load .bar {
+      border-radius: 0;
+      background: rgba(0, 0, 0, 0.25);
+      width: 1%; }
+  #toolbar .button {
+    display: inline-block;
+    margin: 3px;
+    padding: 3px 6px;
+    border: 1px solid #cccccc;
+    background: #dedede;
+    cursor: pointer; }
+  #toolbar .button:hover {
+    background: #ebebeb; }
+  #toolbar .pager {
+    margin: 0;
+    padding: 0;
+    float: left; }
+    #toolbar .pager ol {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+    #toolbar .pager li .delete {
+      display: none; }
+    #toolbar .pager li:hover {
+      background: #f8f8f8; }
+    #toolbar .pager li.current {
+      border-color: #1f1f1f; }
+      #toolbar .pager li.current .delete {
+        display: inline;
+        margin-left: 10px; }
+
+#view {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 28px;
+  bottom: 3px; }
+
+.box {
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 3px;
+  padding: 3px;
+  background: #cccccc;
+  border-radius: 3px; }
+
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px; }
+
+.state {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear; }
+
+.state.ok, .state.okay, .bar.ok, .bar.okay {
+  background: #06fa23;
+  color: #000; }
+
+.state.warning, .state.warn, .bar.warning, .bar.warn {
+  background: #ffc712;
+  color: #000; }
+
+.state.critical, .state.failure, .state.err, .bar.critical, .bar.failure, .bar.err {
+  background: #ff6513;
+  color: #000; }
+
+.view .query {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+  margin: 0; }
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+.log-table .scroll {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.log-table table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.log-table thead {
+  text-align: left; }
+
+.log-table td {
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  padding: 3px;
+  white-space: pre; }
+
+.log-table td .bar {
+  margin: -3px;
+  padding: 3px; }
+
+.chart {
+  width: 140px;
+  border: 1px solid #ccc; }
+
+.chart td {
+  min-width: 40px;
+  overflow: hidden; }
+
+.chart th {
+  width: 1px;
+  text-align: left; }
+
+.timeSeries rect {
+  fill: #CA0000;
+  stroke: white; }
+
+#layout {
+  position: relative; }
+
+.view {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden; }
+
+.focusOverlay {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5); }
+
+#simplemodal-overlay {
+  background-color: #000; }
+
+#simplemodal-container {
+  background-color: #fff;
+  color: #000;
+  padding: 12px;
+  border-radius: 4px;
+  min-width: 400px;
+  min-height: 400px; }
+
+#simplemodal-container a.modalCloseImg {
+  background: url(/x.png) no-repeat;
+  /* adjust url as required */
+  width: 25px;
+  height: 29px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer; }
+
+textarea.query {
+  width: 100%;
+  height: 100px; }
+
+.quickfit {
+  display: block;
+  white-space: nowrap;
+  width: 100%; }
+
+h2 {
+  display: block;
+  padding: 3px;
+  margin: 0; }
+
+.metric {
+  font-weight: bolder;
+  text-align: right; }
+
+.title h2 {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px; }
+
+.gauge h2 {
+  position: absolute;
+  height: 25%;
+  width: 75%;
+  bottom: 3px;
+  right: 3px;
+  text-align: right; }
+.gauge .value {
+  position: absolute;
+  height: 75%;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: right; }
+
+.grid {
+  white-space: nowrap; }
+  .grid h2 {
+    height: 28px;
+    font-size: 24px; }
+  .grid .container {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .grid .bar {
+    position: static;
+    display: block;
+    height: 100%; }
+  .grid .box {
+    margin: 0;
+    padding: 0;
+    position: static; }
+    .grid .box .metric {
+      padding: 3px;
+      font-weight: normal; }
+  .grid table {
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    border-spacing: 3px; }
+    .grid table th {
+      text-align: right; }
+    .grid table thead {
+      margin: 0;
+      padding: 0; }
+      .grid table thead th {
+        position: relative;
+        top: 3px;
+        vertical-align: bottom;
+        text-align: left; }
+  .grid tr > *:first-child {
+    width: 1px; }
+
+.time-series-container .title {
+  font-weight: 700;
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+  padding: 2px;
+  display: block; }
+.time-series-container .legend {
+  height: 100%;
+  font-size: 16px;
+  text-shadow: #f2f2f2 0px 0px 1px;
+  color: #0d0d0d;
+  position: absolute;
+  bottom: 0px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  align-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-align-content: flex-start;
+  -moz-align-content: flex-start;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  align-items: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  -moz-align-items: stretch; }
+.time-series-container .event-legend {
+  padding: 4px;
+  flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  -moz-flex: 1 1 auto;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out; }
+.time-series-container .event-legend:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important; }
+
+.flot.view .legend {
+  font-size: 13px;
+  color: #000;
+  opacity: 1; }
+.flot.view h2 {
+  height: 28px;
+  font-size: 24px; }
+.flot.view .container {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0; }

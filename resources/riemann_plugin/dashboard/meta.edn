@@ -1,0 +1,4 @@
+{:plugin "dashboard"
+ :title  "Riemann Dashboard"
+ :git-repo "https://github.com/zaytsev/riemann-dashboard"
+ :require riemann.plugin.dashboard}
