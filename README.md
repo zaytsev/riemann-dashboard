@@ -1,6 +1,8 @@
 Riemann Dashboard plugin
 =================
 
+Test
+
 A clone of [Riemann-Dash](https://github.com/aphyr/riemann-dash) packaged as a [Riemann](http://riemann.io) plugin.
 
 Get Started
